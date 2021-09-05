@@ -26,7 +26,7 @@
             app:popUpTo="@id/navigation_graph" />
         <action
             android:id="@+id/action_plannerFragment_to_generalStatisticsFragment"
-            app:destination="@id/viewPagerContainerStatisticsFragment"
+            app:destination="@id/statisticsContainerFragment"
             app:launchSingleTop="true"
             app:popUpTo="@id/navigation_graph" />
     </fragment>
@@ -51,7 +51,7 @@
             app:popUpTo="@id/navigation_graph" />
         <action
             android:id="@+id/action_categoryFragment_to_generalStatisticsFragment"
-            app:destination="@id/viewPagerContainerStatisticsFragment"
+            app:destination="@id/statisticsContainerFragment"
             app:launchSingleTop="true"
             app:popUpTo="@id/navigation_graph" />
         <action
@@ -74,7 +74,7 @@
             app:destination="@id/categoryFragment" />
         <action
             android:id="@+id/action_categoryListFragment_to_generalStatisticsFragment"
-            app:destination="@id/viewPagerContainerStatisticsFragment"
+            app:destination="@id/statisticsContainerFragment"
             app:launchSingleTop="true"
             app:popUpTo="@id/navigation_graph" />
         <action
@@ -109,15 +109,15 @@
             app:popUpTo="@id/navigation_graph" />
         <action
             android:id="@+id/action_collectionFragment_to_generalStatisticsFragment"
-            app:destination="@id/viewPagerContainerStatisticsFragment"
+            app:destination="@id/statisticsContainerFragment"
             app:launchSingleTop="true"
             app:popUpTo="@id/navigation_graph" />
     </fragment>
     <fragment
-        android:id="@+id/viewPagerContainerStatisticsFragment"
-        android:name="com.paramonov.challenge.ui.feature.view_pager_container_statistics_fragment.ViewPagerContainerStatisticsFragment"
+        android:id="@+id/statisticsContainerFragment"
+        android:name="com.paramonov.challenge.ui.feature.statistics.StatisticsContainerFragment"
         android:label="fragment_general_statistics"
-        tools:layout="@layout/fragment_view_pager_container" >
+        tools:layout="@layout/fragment_statistics_container" >
         <action
             android:id="@+id/action_generalStatisticsFragment_to_settingsFragment"
             app:destination="@id/settingsFragment"
@@ -145,7 +145,7 @@
         tools:layout="@layout/fragment_settings" >
         <action
             android:id="@+id/action_settingsFragment_to_generalStatisticsFragment"
-            app:destination="@id/viewPagerContainerStatisticsFragment"
+            app:destination="@id/statisticsContainerFragment"
             app:launchSingleTop="true"
             app:popUpTo="@id/navigation_graph" />
         <action
