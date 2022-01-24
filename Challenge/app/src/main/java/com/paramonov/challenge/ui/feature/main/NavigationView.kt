@@ -1,7 +1,5 @@
 package com.paramonov.challenge.ui.feature.main
 
-import androidx.navigation.NavController
-
 interface NavigationView {
 
     interface Item {
@@ -10,9 +8,5 @@ interface NavigationView {
         fun navigateToCategoryList()
         fun navigateToPlanner()
         fun navigateToSettings()
-    }
-
-    interface ControllerProvider {
-        fun getNavController(): NavController?
     }
 }

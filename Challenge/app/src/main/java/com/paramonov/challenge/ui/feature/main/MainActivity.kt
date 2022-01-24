@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.*
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
-import androidx.navigation.*
 import com.google.android.material.navigation.NavigationView.OnNavigationItemSelectedListener
 import com.paramonov.challenge.R
 import com.paramonov.challenge.databinding.ActivityMainBinding
@@ -14,10 +13,8 @@ import com.paramonov.challenge.ui.feature.login.LoginActivity
 import java.lang.RuntimeException
 import org.koin.android.viewmodel.ext.android.viewModel
 
-class MainActivity : AppCompatActivity(), OnNavigationItemSelectedListener,
-    NavigationView.ControllerProvider, ToolbarContract {
+class MainActivity : AppCompatActivity(), OnNavigationItemSelectedListener, ToolbarContract {
 
-    private var navController: NavController? = null
     private var binding: ActivityMainBinding? = null
     private val mBinding get() = binding!!
     private val model: MainViewModel by viewModel()
@@ -28,7 +25,6 @@ class MainActivity : AppCompatActivity(), OnNavigationItemSelectedListener,
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
         setSupportActionBar(mBinding.toolbar)
-        navController = Navigation.findNavController(this, R.id.nav_host_fragment)
         mBinding.navView.setNavigationItemSelectedListener(this)
         initBarDrawerToggle()
     }
@@ -49,8 +45,6 @@ class MainActivity : AppCompatActivity(), OnNavigationItemSelectedListener,
         drawer.addDrawerListener(toggle)
         toggle.syncState()
     }
-
-    override fun getNavController() = navController
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         val navigationItem = getNavigationItemFragment()

@@ -8,7 +8,6 @@ import androidx.appcompat.view.ActionMode.Callback
 import androidx.appcompat.widget.PopupMenu
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.*
-import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
 import com.paramonov.challenge.R
 import com.paramonov.challenge.data.repository.model.*
@@ -16,6 +15,7 @@ import com.paramonov.challenge.databinding.FragmentCategoriesBinding
 import com.paramonov.challenge.ui.feature.category.ChallengeAdapter.ChallengeSelection
 import com.paramonov.challenge.ui.feature.category_list.*
 import com.paramonov.challenge.ui.feature.main.*
+import com.paramonov.challenge.ui.utils.getNavController
 import com.paramonov.challenge.ui.utils.loadByUrl
 import org.koin.android.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
@@ -37,7 +37,7 @@ class CategoryFragment : Fragment(), NavigationView.Item, ChallengeAdapter.ItemL
             handler.removeCallbacksAndMessages(null)
             handler.postDelayed({ updateUI(category) }, START_DELAY)
         } else {
-            getNavController()?.popBackStack()
+            getNavController().popBackStack()
         }
     }
 
@@ -157,27 +157,23 @@ class CategoryFragment : Fragment(), NavigationView.Item, ChallengeAdapter.ItemL
     }
 
     override fun navigateToStatistics() {
-        getNavController()?.navigate(R.id.action_categoryFragment_to_generalStatisticsFragment)
+        getNavController().navigate(R.id.action_categoryFragment_to_generalStatisticsFragment)
     }
 
     override fun navigateToCollection() {
-        getNavController()?.navigate(R.id.action_categoryFragment_to_collectionFragment)
+        getNavController().navigate(R.id.action_categoryFragment_to_collectionFragment)
     }
 
     override fun navigateToCategoryList() {
-        getNavController()?.navigate(R.id.action_categoryFragment_to_categoryListFragment)
+        getNavController().navigate(R.id.action_categoryFragment_to_categoryListFragment)
     }
 
     override fun navigateToPlanner() {
-        getNavController()?.navigate(R.id.action_categoryFragment_to_plannerFragment)
+        getNavController().navigate(R.id.action_categoryFragment_to_plannerFragment)
     }
 
     override fun navigateToSettings() {
-        getNavController()?.navigate(R.id.action_categoryFragment_to_settingsFragment)
-    }
-
-    private fun getNavController(): NavController? {
-        return (activity as? NavigationView.ControllerProvider)?.getNavController()
+        getNavController().navigate(R.id.action_categoryFragment_to_settingsFragment)
     }
 
     private fun getChallengeAdapter(): ChallengeAdapter? {
