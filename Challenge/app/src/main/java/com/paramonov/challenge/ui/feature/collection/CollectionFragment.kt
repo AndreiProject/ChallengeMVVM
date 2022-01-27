@@ -8,12 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.paramonov.challenge.R
 import com.paramonov.challenge.databinding.FragmentCollectionBinding
 import com.paramonov.challenge.data.repository.model.Category
-import com.paramonov.challenge.ui.feature.main.NavigationView
 import com.paramonov.challenge.ui.feature.main.ToolbarContract
-import com.paramonov.challenge.ui.utils.getNavController
 import org.koin.android.viewmodel.ext.android.viewModel
 
-class CollectionFragment : Fragment(), NavigationView.Item, LifecycleObserver {
+class CollectionFragment : Fragment(), LifecycleObserver {
     private var binding: FragmentCollectionBinding? = null
     private val mBinding get() = binding!!
 
@@ -47,24 +45,6 @@ class CollectionFragment : Fragment(), NavigationView.Item, LifecycleObserver {
         val root = requireActivity() as? ToolbarContract
         root?.setTitleToolbar(R.string.nav_collection)
     }
-
-    override fun navigateToStatistics() {
-        getNavController().navigate(R.id.action_collectionFragment_to_generalStatisticsFragment)
-    }
-
-    override fun navigateToCategoryList() {
-        getNavController().navigate(R.id.action_collectionFragment_to_categoryListFragment)
-    }
-
-    override fun navigateToPlanner() {
-        getNavController().navigate(R.id.action_collectionFragment_to_plannerFragment)
-    }
-
-    override fun navigateToSettings() {
-        getNavController().navigate(R.id.action_collectionFragment_to_settingsFragment)
-    }
-
-    override fun navigateToCollection() {}
 
     override fun onDestroyView() {
         super.onDestroyView()

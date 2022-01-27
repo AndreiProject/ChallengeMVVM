@@ -9,7 +9,6 @@ import com.paramonov.challenge.R
 import com.paramonov.challenge.databinding.FragmentCategoryListBinding
 import com.paramonov.challenge.data.repository.model.Category
 import org.koin.android.viewmodel.ext.android.viewModel
-import com.paramonov.challenge.ui.feature.main.NavigationView
 import com.paramonov.challenge.ui.feature.category_list.CategoryListAdapter.ItemListener
 import com.paramonov.challenge.ui.feature.main.ToolbarContract
 import com.paramonov.challenge.ui.utils.getNavController
@@ -18,7 +17,7 @@ const val CATEGORY_ID = "CATEGORY_ID"
 const val CATEGORY_NAME = "CATEGORY_TITLE"
 const val CATEGORY_IMG_URL = "CATEGORY_IMG_URL"
 
-class CategoryListFragment : Fragment(), NavigationView.Item, ItemListener, LifecycleObserver {
+class CategoryListFragment : Fragment(), ItemListener, LifecycleObserver {
     private var binding: FragmentCategoryListBinding? = null
     private val mBinding get() = binding!!
 
@@ -63,24 +62,6 @@ class CategoryListFragment : Fragment(), NavigationView.Item, ItemListener, Life
             bundle
         )
     }
-
-    override fun navigateToStatistics() {
-        getNavController().navigate(R.id.action_categoryListFragment_to_generalStatisticsFragment)
-    }
-
-    override fun navigateToCollection() {
-        getNavController().navigate(R.id.action_categoryListFragment_to_collectionFragment)
-    }
-
-    override fun navigateToPlanner() {
-        getNavController().navigate(R.id.action_categoryListFragment_to_plannerFragment)
-    }
-
-    override fun navigateToSettings() {
-        getNavController().navigate(R.id.action_categoryListFragment_to_settingsFragment)
-    }
-
-    override fun navigateToCategoryList() {}
 
     override fun onDestroyView() {
         super.onDestroyView()

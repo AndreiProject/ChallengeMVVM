@@ -6,11 +6,9 @@ import android.view.*
 import androidx.lifecycle.*
 import com.paramonov.challenge.R
 import com.paramonov.challenge.databinding.FragmentPlannerBinding
-import com.paramonov.challenge.ui.feature.main.NavigationView
 import com.paramonov.challenge.ui.feature.main.ToolbarContract
-import com.paramonov.challenge.ui.utils.getNavController
 
-class PlannerFragment : Fragment(), NavigationView.Item, LifecycleObserver {
+class PlannerFragment : Fragment(), LifecycleObserver {
     private var binding: FragmentPlannerBinding? = null
     private val mBinding get() = binding!!
 
@@ -29,24 +27,6 @@ class PlannerFragment : Fragment(), NavigationView.Item, LifecycleObserver {
         val root = requireActivity() as? ToolbarContract
         root?.setTitleToolbar(R.string.nav_planner)
     }
-
-    override fun navigateToStatistics() {
-        getNavController().navigate(R.id.action_plannerFragment_to_generalStatisticsFragment)
-    }
-
-    override fun navigateToCollection() {
-        getNavController().navigate(R.id.action_plannerFragment_to_collectionFragment)
-    }
-
-    override fun navigateToCategoryList() {
-        getNavController().navigate(R.id.action_plannerFragment_to_categoryListFragment)
-    }
-
-    override fun navigateToSettings() {
-        getNavController().navigate(R.id.action_plannerFragment_to_settingsFragment)
-    }
-
-    override fun navigateToPlanner() {}
 
     override fun onDestroyView() {
         super.onDestroyView()

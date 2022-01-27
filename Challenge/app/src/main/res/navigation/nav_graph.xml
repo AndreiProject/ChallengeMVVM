@@ -2,14 +2,14 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/navigation_graph"
+    android:id="@+id/nav_graph"
     app:startDestination="@id/categoryListFragment">
 
     <fragment
         android:id="@+id/plannerFragment"
         android:name="com.paramonov.challenge.ui.feature.planner.PlannerFragment"
         android:label="fragment_achievements_planner"
-        tools:layout="@layout/fragment_planner" >
+        tools:layout="@layout/fragment_planner">
         <action
             android:id="@+id/action_plannerFragment_to_settingsFragment"
             app:destination="@id/settingsFragment"
@@ -17,24 +17,24 @@
         <action
             android:id="@+id/action_plannerFragment_to_categoryListFragment"
             app:destination="@id/categoryListFragment"
-            app:launchSingleTop="true"
-            app:popUpTo="@id/navigation_graph" />
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_plannerFragment_to_collectionFragment"
             app:destination="@id/collectionFragment"
-            app:launchSingleTop="true"
-            app:popUpTo="@id/navigation_graph" />
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_plannerFragment_to_generalStatisticsFragment"
-            app:destination="@id/statisticsContainerFragment"
-            app:launchSingleTop="true"
-            app:popUpTo="@id/navigation_graph" />
+            app:destination="@id/statisticsFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/categoryFragment"
         android:name="com.paramonov.challenge.ui.feature.category.CategoryFragment"
         android:label="fragment_categories"
-        tools:layout="@layout/fragment_categories" >
+        tools:layout="@layout/fragment_categories">
         <action
             android:id="@+id/action_categoryFragment_to_settingsFragment"
             app:destination="@id/settingsFragment"
@@ -42,29 +42,29 @@
         <action
             android:id="@+id/action_categoryFragment_to_categoryListFragment"
             app:destination="@id/categoryListFragment"
-            app:launchSingleTop="true"
-            app:popUpTo="@id/navigation_graph" />
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_categoryFragment_to_plannerFragment"
             app:destination="@id/plannerFragment"
-            app:launchSingleTop="true"
-            app:popUpTo="@id/navigation_graph" />
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_categoryFragment_to_generalStatisticsFragment"
-            app:destination="@id/statisticsContainerFragment"
-            app:launchSingleTop="true"
-            app:popUpTo="@id/navigation_graph" />
+            app:destination="@id/statisticsFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_categoryFragment_to_collectionFragment"
             app:destination="@id/collectionFragment"
-            app:launchSingleTop="true"
-            app:popUpTo="@id/navigation_graph" />
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/categoryListFragment"
         android:name="com.paramonov.challenge.ui.feature.category_list.CategoryListFragment"
         android:label="fragment_category_list"
-        tools:layout="@layout/fragment_category_list" >
+        tools:layout="@layout/fragment_category_list">
         <action
             android:id="@+id/action_categoryListFragment_to_settingsFragment"
             app:destination="@id/settingsFragment"
@@ -74,25 +74,25 @@
             app:destination="@id/categoryFragment" />
         <action
             android:id="@+id/action_categoryListFragment_to_generalStatisticsFragment"
-            app:destination="@id/statisticsContainerFragment"
-            app:launchSingleTop="true"
-            app:popUpTo="@id/navigation_graph" />
+            app:destination="@id/statisticsFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_categoryListFragment_to_collectionFragment"
             app:destination="@id/collectionFragment"
-            app:launchSingleTop="true"
-            app:popUpTo="@id/navigation_graph" />
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_categoryListFragment_to_plannerFragment"
             app:destination="@id/plannerFragment"
-            app:launchSingleTop="true"
-            app:popUpTo="@id/navigation_graph" />
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/collectionFragment"
         android:name="com.paramonov.challenge.ui.feature.collection.CollectionFragment"
         android:label="fragment_collection_achievements"
-        tools:layout="@layout/fragment_collection" >
+        tools:layout="@layout/fragment_collection">
         <action
             android:id="@+id/action_collectionFragment_to_settingsFragment"
             app:destination="@id/settingsFragment"
@@ -100,24 +100,24 @@
         <action
             android:id="@+id/action_collectionFragment_to_categoryListFragment"
             app:destination="@id/categoryListFragment"
-            app:launchSingleTop="true"
-            app:popUpTo="@id/navigation_graph" />
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_collectionFragment_to_plannerFragment"
             app:destination="@id/plannerFragment"
-            app:launchSingleTop="true"
-            app:popUpTo="@id/navigation_graph" />
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_collectionFragment_to_generalStatisticsFragment"
-            app:destination="@id/statisticsContainerFragment"
-            app:launchSingleTop="true"
-            app:popUpTo="@id/navigation_graph" />
+            app:destination="@id/statisticsFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
-        android:id="@+id/statisticsContainerFragment"
+        android:id="@+id/statisticsFragment"
         android:name="com.paramonov.challenge.ui.feature.statistics.StatisticsContainerFragment"
         android:label="fragment_general_statistics"
-        tools:layout="@layout/fragment_statistics_container" >
+        tools:layout="@layout/fragment_statistics_container">
         <action
             android:id="@+id/action_generalStatisticsFragment_to_settingsFragment"
             app:destination="@id/settingsFragment"
@@ -125,43 +125,53 @@
         <action
             android:id="@+id/action_generalStatisticsFragment_to_categoryListFragment"
             app:destination="@id/categoryListFragment"
-            app:launchSingleTop="true"
-            app:popUpTo="@id/navigation_graph" />
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_generalStatisticsFragment_to_collectionFragment"
             app:destination="@id/collectionFragment"
-            app:launchSingleTop="true"
-            app:popUpTo="@id/navigation_graph" />
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_generalStatisticsFragment_to_plannerFragment"
             app:destination="@id/plannerFragment"
-            app:launchSingleTop="true"
-            app:popUpTo="@id/navigation_graph" />
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.paramonov.challenge.ui.feature.settings.SettingsFragment"
         android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" >
+        tools:layout="@layout/fragment_settings">
         <action
             android:id="@+id/action_settingsFragment_to_generalStatisticsFragment"
-            app:destination="@id/statisticsContainerFragment"
-            app:launchSingleTop="true"
-            app:popUpTo="@id/navigation_graph" />
+            app:destination="@id/statisticsFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_settingsFragment_to_categoryListFragment"
             app:destination="@id/categoryListFragment"
-            app:launchSingleTop="true"
-            app:popUpTo="@id/navigation_graph" />
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_settingsFragment_to_collectionFragment"
             app:destination="@id/collectionFragment"
-            app:launchSingleTop="true"
-            app:popUpTo="@id/navigation_graph" />
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_settingsFragment_to_plannerFragment"
             app:destination="@id/plannerFragment"
-            app:launchSingleTop="true"
-            app:popUpTo="@id/navigation_graph" />
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
     </fragment>
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.paramonov.challenge.ui.feature.login.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
+    <activity
+        android:id="@+id/arithmeticActivity"
+        android:name="com.paramonov.challenge.ui.feature.arithmetic.ArithmeticActivity"
+        android:label="activity_arithmetic"
+        tools:layout="@layout/activity_arithmetic" />
 </navigation>

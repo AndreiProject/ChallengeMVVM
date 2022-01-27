@@ -22,7 +22,7 @@ import org.koin.core.parameter.parametersOf
 
 private const val START_DELAY = 500L
 
-class CategoryFragment : Fragment(), NavigationView.Item, ChallengeAdapter.ItemListener,
+class CategoryFragment : Fragment(), ChallengeAdapter.ItemListener,
     LifecycleObserver {
     private var binding: FragmentCategoriesBinding? = null
     private val mBinding get() = binding!!
@@ -154,26 +154,6 @@ class CategoryFragment : Fragment(), NavigationView.Item, ChallengeAdapter.ItemL
 
     private fun getStringArg(ket: String): String {
         return arguments?.getString(ket, "") ?: ""
-    }
-
-    override fun navigateToStatistics() {
-        getNavController().navigate(R.id.action_categoryFragment_to_generalStatisticsFragment)
-    }
-
-    override fun navigateToCollection() {
-        getNavController().navigate(R.id.action_categoryFragment_to_collectionFragment)
-    }
-
-    override fun navigateToCategoryList() {
-        getNavController().navigate(R.id.action_categoryFragment_to_categoryListFragment)
-    }
-
-    override fun navigateToPlanner() {
-        getNavController().navigate(R.id.action_categoryFragment_to_plannerFragment)
-    }
-
-    override fun navigateToSettings() {
-        getNavController().navigate(R.id.action_categoryFragment_to_settingsFragment)
     }
 
     private fun getChallengeAdapter(): ChallengeAdapter? {
