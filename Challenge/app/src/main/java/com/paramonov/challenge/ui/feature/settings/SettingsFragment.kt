@@ -4,16 +4,14 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.*
 import androidx.lifecycle.*
-import androidx.navigation.NavController
 import com.paramonov.challenge.R
 import com.paramonov.challenge.databinding.FragmentSettingsBinding
-import com.paramonov.challenge.ui.feature.main.NavigationView
 import com.paramonov.challenge.data.repository.remote.firebase.model.User
 import com.paramonov.challenge.ui.feature.main.ToolbarContract
 import com.paramonov.challenge.ui.utils.isValid
 import org.koin.android.viewmodel.ext.android.viewModel
 
-class SettingsFragment : Fragment(), NavigationView.Item, LifecycleObserver {
+class SettingsFragment : Fragment(), LifecycleObserver {
     private var binding: FragmentSettingsBinding? = null
     private val mBinding get() = binding!!
 
@@ -61,28 +59,6 @@ class SettingsFragment : Fragment(), NavigationView.Item, LifecycleObserver {
                 }
             }
         }
-    }
-
-    override fun navigateToStatistics() {
-        getNavController()?.navigate(R.id.action_settingsFragment_to_generalStatisticsFragment)
-    }
-
-    override fun navigateToCollection() {
-        getNavController()?.navigate(R.id.action_settingsFragment_to_collectionFragment)
-    }
-
-    override fun navigateToCategoryList() {
-        getNavController()?.navigate(R.id.action_settingsFragment_to_categoryListFragment)
-    }
-
-    override fun navigateToPlanner() {
-        getNavController()?.navigate(R.id.action_settingsFragment_to_plannerFragment)
-    }
-
-    override fun navigateToSettings() {}
-
-    private fun getNavController(): NavController? {
-        return (activity as? NavigationView.ControllerProvider)?.getNavController()
     }
 
     override fun onDestroyView() {

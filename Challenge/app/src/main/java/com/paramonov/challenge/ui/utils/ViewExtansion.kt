@@ -4,6 +4,8 @@ import android.content.Context
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import com.paramonov.challenge.R
 import com.squareup.picasso.Picasso
 import java.io.File
@@ -25,3 +27,5 @@ fun EditText.isValid(context: Context, warnMessageId: Int): Boolean {
     }
     return true
 }
+
+fun Fragment.getNavController() = Navigation.findNavController(requireView())

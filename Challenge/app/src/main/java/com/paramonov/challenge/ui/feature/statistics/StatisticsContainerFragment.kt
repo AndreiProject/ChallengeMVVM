@@ -4,14 +4,12 @@ import android.view.*
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.*
-import androidx.navigation.NavController
 import com.google.android.material.tabs.TabLayoutMediator
 import com.paramonov.challenge.R
 import com.paramonov.challenge.databinding.FragmentStatisticsContainerBinding
-import com.paramonov.challenge.ui.feature.main.NavigationView
 import com.paramonov.challenge.ui.feature.main.ToolbarContract
 
-class StatisticsContainerFragment : Fragment(), NavigationView.Item, LifecycleObserver {
+class StatisticsContainerFragment : Fragment(), LifecycleObserver {
     private var binding: FragmentStatisticsContainerBinding? = null
     private val mBinding get() = binding!!
 
@@ -43,28 +41,6 @@ class StatisticsContainerFragment : Fragment(), NavigationView.Item, LifecycleOb
     fun activityOnCreated() {
         val root = requireActivity() as? ToolbarContract
         root?.setTitleToolbar(R.string.nav_statistics)
-    }
-
-    override fun navigateToCollection() {
-        getNavController()?.navigate(R.id.action_generalStatisticsFragment_to_collectionFragment)
-    }
-
-    override fun navigateToCategoryList() {
-        getNavController()?.navigate(R.id.action_generalStatisticsFragment_to_categoryListFragment)
-    }
-
-    override fun navigateToPlanner() {
-        getNavController()?.navigate(R.id.action_generalStatisticsFragment_to_plannerFragment)
-    }
-
-    override fun navigateToSettings() {
-        getNavController()?.navigate(R.id.action_generalStatisticsFragment_to_settingsFragment)
-    }
-
-    override fun navigateToStatistics() {}
-
-    private fun getNavController(): NavController? {
-        return (activity as? NavigationView.ControllerProvider)?.getNavController()
     }
 
     override fun onDestroyView() {
